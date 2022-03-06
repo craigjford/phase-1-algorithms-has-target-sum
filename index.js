@@ -1,5 +1,22 @@
+
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+
+  let wipArr= [];
+
+  if (array.length === 1) {
+      return false;
+  }
+
+  for (let i = 0; i < array.length; i++)  {
+      let a = i + 1;
+      wipArr = array.slice(a);
+      for (let j = 0; j < wipArr.length; j++) {
+          if (target === array[i] + wipArr[j]) { 
+                  return true;
+          };
+      };
+  };
+  return false;
 }
 
 /* 
